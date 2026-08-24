@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- 全局重置 ---------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-canvas text-ink-900 font-sans antialiased;
+    margin: 0;
+  }
+
+  * {
+    @apply border-ink-300/40;
+  }
+}
+
+/* ---------- 组件级工具类 ---------- */
+@layer components {
+  /* 页面容器 */
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6;
+  }
+
+  /* 正文容器 */
+  .container-prose {
+    @apply mx-auto w-full max-w-prose px-6;
+  }
+
+  /* 主按钮 */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-brand-500 px-6 py-3 text-sm font-medium text-white transition-colors duration-150 hover:bg-brand-600 active:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* 次按钮 */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] border border-ink-300 bg-white px-6 py-3 text-sm font-medium text-ink-900 transition-colors duration-150 hover:border-brand-400 hover:text-brand-500 active:border-brand-500;
+  }
+
+  /* 卡片 */
+  .card-base {
+    @apply rounded-[12px] border border-ink-300/50 bg-white p-6 transition-shadow duration-200 hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)];
+  }
+
+  /* 标签 */
+  .tag-brand {
+    @apply inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600;
+  }
+}
+
+/* ---------- 滚动条 ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ink-300/60;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ink-300;
+}
+
+/* ---------- 聊天消息中的 Markdown 排版 ---------- */
+.prose-chat {
+  @apply text-[15px] leading-relaxed text-ink-900;
+}
+
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3 {
+  @apply mt-5 mb-2 font-semibold text-ink-900;
+}
+
+.prose-chat h1 {
+  @apply text-lg;
+}
+
+.prose-chat h2 {
+  @apply text-base;
+}
+
+.prose-chat h3 {
+  @apply text-[15px];
+}
+
+.prose-chat p {
+  @apply my-2;
+}
+
+.prose-chat ul,
+.prose-chat ol {
+  @apply my-2 pl-5;
+}
+
+.prose-chat ul {
+  @apply list-disc;
+}
+
+.prose-chat ol {
+  @apply list-decimal;
+}
+
+.prose-chat li {
+  @apply my-1;
+}
+
+.prose-chat blockquote {
+  @apply my-3 border-l-[3px] border-brand-400 pl-4 text-ink-500;
+}
+
+.prose-chat strong {
+  @apply font-semibold text-ink-900;
+}
+
+.prose-chat code {
+  @apply rounded bg-ink-100 px-1.5 py-0.5 font-mono text-[13px];
+}
+
+.prose-chat pre {
+  @apply my-3 overflow-x-auto rounded-[10px] bg-ink-900 p-4;
+}
+
+.prose-chat pre code {
+  @apply bg-transparent p-0 text-[13px] text-white;
+}
+
+.prose-chat table {
+  @apply my-3 w-full border-collapse text-sm;
+}
+
+.prose-chat th,
+.prose-chat td {
+  @apply border border-ink-300/60 px-3 py-2 text-left;
+}
+
+.prose-chat th {
+  @apply bg-ink-100 font-medium;
+}
