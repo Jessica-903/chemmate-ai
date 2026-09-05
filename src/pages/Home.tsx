@@ -14,6 +14,22 @@ export default function Home() {
         <Process />
       </main>
       <Footer />
+
+      {/* 预加载 Dify chatbot：用户在首页浏览时后台加载，点进聊天页秒开 */}
+      <iframe
+        src="https://udify.app/chatbot/1MWwVdrO3gbkB9b0"
+        title="Dify preload"
+        style={{
+          position: 'absolute',
+          width: 0,
+          height: 0,
+          opacity: 0,
+          pointerEvents: 'none',
+          border: 'none',
+        }}
+        tabIndex={-1}
+        aria-hidden="true"
+      />
     </div>
   )
 }
